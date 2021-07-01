@@ -7,8 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1g8Rf5UT6jX4IPy-VhnDM58tB6rbyz8K6
 """
 
-!pip install scikit-learn==0.24
-
 ## Metrics
 
 # A = Observation
