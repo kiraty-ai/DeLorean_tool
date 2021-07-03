@@ -169,6 +169,15 @@ class DeLorean:
         plt.show()
 
         return
+    
+    def plot_error(self):
+        Error=self.get_error()
+
+        fig, axs = plt.subplots(1, 1,figsize=(30,7))
+        axs.plot(Error)
+        axs.get_xaxis().set_ticks([])
+        plt.show()
+        return
 
     def pair_dfs(self, freq = '15min'):
 
