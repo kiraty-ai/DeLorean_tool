@@ -177,6 +177,7 @@ class DeLorean:
         axs.plot(Error)
         axs.get_xaxis().set_ticks([])
         plt.show()
+        axs.grid(True)
         return
 
     def pair_dfs(self, freq = '15min'):
