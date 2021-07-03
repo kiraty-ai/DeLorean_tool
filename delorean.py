@@ -139,24 +139,32 @@ class DeLorean:
 
     def plot_data(self):
 
-        fig, axs = plt.subplots(1, 3,figsize=(25,5))
-
-
+        fig, axs = plt.subplots(3, 1,figsize=(30,15))
+        fig.autofmt_xdate()
+        
+        
         axs[0].plot(self.observation[self.elevations[0],self.features[0]])
         axs[0].set_title('Observation: '+ self.features[0])
         axs[0].set(xlabel='Date', ylabel=self.features[0])
-        axs[0].grid(True)
+        axs[0].grid(False)
+        axs[0].axes.get_xaxis().set_ticks([])
+        axs[0].fmt_xdata = mdates.DateFormatter('%Y-%m-%d')
 
         axs[1].plot(self.prediction[self.elevations[1],self.features[1]])
         axs[1].set_title('Prediction: '+ self.features[1])
         axs[1].set(xlabel='Date', ylabel=self.features[1])
-        axs[1].grid(True)
+        axs[1].grid(False)
+        axs[1].axes.get_xaxis().set_ticks([])
+        axs[1].fmt_xdata = mdates.DateFormatter('%Y-%m-%d')
+
 
         axs[2].plot(self.observation[self.elevations[0],self.features[0]])
         axs[2].plot(self.prediction[self.elevations[1],self.features[1]])
         axs[2].set_title('Observation & Prediction')
         axs[2].set(xlabel='Date', ylabel=self.features[0]+' & '+ self.features[1])     
-        axs[2].grid(True)
+        axs[2].grid(False)
+        axs[2].axes.get_xaxis().set_ticks([])
+        axs[2].fmt_xdata = mdates.DateFormatter('%Y-%m-%d')
 
         plt.show()
 
